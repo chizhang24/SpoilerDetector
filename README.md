@@ -6,7 +6,7 @@ INMAS Workshop 4 Project
 
 1. prediction of spoiler label (Siqi Jiao, Sunny Zhao)
 2. Classification
-3. Howard: a bare minimum is to create a classifier model that uses movie ratings to predict genres as a training set, and apply it to predict genres based on ratings for anime as a testing set. A more ambitious but time permitting idea is assessing movie ratings depending on if there are characters that use fire in them, hoping to use NLP and perhaps chatbots to more accurately attain information on whether or not a certain movie has a character that uses fire in it
+3. Howard: a somewhat ambitious idea is to use NLP to assess word frequency and text similiarity to predict if a movie has a character that uses fire in it. First, we extract data from anime that have fire users in it and compare the movie descriptions to the anime descriptions to assess similarity
 
 ## Configure Python environment
 
@@ -17,13 +17,11 @@ Suppose we have `python >= 3.12.x` installed on local machine.
    ```bash
    python3 -m venv ~/.venvs/env_torch
    ```
-
 2. Activate the `env_torch` virtual environment
 
    ```bash
    source ~/.venvs/env_torch/bin/acivate
    ```
-
 3. Install all python modules needed
 
    ```bash
@@ -44,7 +42,6 @@ Suppose we have `python >= 3.12.x` installed on local machine.
 
    pip install transformers
    ```
-
 4. Set Jupyter Kernel in VS Code. Open VSCode and press `Cmd + Shft + P`, type `python` and choose `select python interpreter` you'll see the interface below. If you don't see it, be patient and press the refresh buttuon and wait. It'll finally appear.
 
 ![1739592348320](image/README/1739592348320.png)
