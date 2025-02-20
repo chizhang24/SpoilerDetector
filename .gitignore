@@ -175,3 +175,5 @@ data/
 gpt2_training.ipynb
 
 saves/
+
+.DS_Store
