@@ -2,11 +2,10 @@
 
 INMAS Workshop 4 Project
 
-## (Possible)Downstream tasks
+## Tasks
 
-1. prediction of spoiler label (Siqi Jiao, Sunny Zhao)
-2. Classification
-3. Howard: a somewhat ambitious idea is to use NLP to assess word frequency and text similiarity to predict if a movie has a character that uses fire in it. First, we extract data from anime that have fire users in it and compare the movie descriptions to the anime descriptions to assess similarity
+1. Prediction of spoiler label (Siqi Jiao, Sunny Zhao)
+2. Howard: a somewhat ambitious idea is to use NLP to assess word frequency and text similiarity to predict if a movie has a character that uses fire in it. First, we extract data from anime that have fire users in it and compare the movie descriptions to the anime descriptions to assess similarity
 
 ## Configure Python environment
 

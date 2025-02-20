@@ -67,6 +67,56 @@ def create_dataloaders(df, tokenizer, batch_size=32, max_len=256):
 
 
 
+def train_lstm(model, dataloader, optimizer, criterion, device):
+    model.train()
+    total_loss = 0
+    total_acc = 0
+
+
+    # Wrap the dataloader with tqdm for progress tracking
+    for batch in tqdm(dataloader, desc="Training"):
+        optimizer.zero_grad()
+        input_ids = batch['input_ids'].to(device)
+        labels = batch['label'].to(device)
+
+        print('input_ids shape:', input_ids.shape)
+        print('labels shape:', labels.shape)
+       
+        # Forward pass
+        outputs = model(input_ids)
+        loss = criterion(outputs, labels)
+        preds = torch.argmax(outputs, dim=1)
+
+        # Backward pass and optimization
+        loss.backward()
+        optimizer.step()
+
+        total_loss += loss.item()
+        total_acc += accuracy_score(labels.cpu().numpy(), preds.cpu().numpy())
+
+    return total_loss / len(dataloader), total_acc / len(dataloader)
+
+
+# Evaluation function
+def evaluate_lstm(model, dataloader, device):
+    model.eval()
+    total_acc = 0
+
+    with torch.no_grad():
+        # Wrap the dataloader with tqdm for progress tracking
+        for batch in tqdm(dataloader, desc="Evaluating"):
+            input_ids = batch['input_ids'].to(device)
+            labels = batch['label'].to(device)
+            outputs = model(input_ids)
+            preds = torch.argmax(outputs, dim=1)
+
+            total_acc += accuracy_score(labels.cpu().numpy(), preds.cpu().numpy())
+
+    return total_acc / len(dataloader)
+
+
+
+
 def train_bert(model, dataloader, optimizer, device):
     model.train()
     total_loss, total_acc = 0, 0
