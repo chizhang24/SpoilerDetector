@@ -11,13 +11,11 @@ Suppose we have `python >= 3.12.x` installed on local machine.
    ```bash
    python3 -m venv ~/.venvs/env_torch
    ```
-
 2. Activate the `env_torch` virtual environment
 
    ```bash
    source ~/.venvs/env_torch/bin/acivate
    ```
-
 3. Install all python modules needed
 
    ```bash
@@ -38,7 +36,6 @@ Suppose we have `python >= 3.12.x` installed on local machine.
 
    pip install transformers
    ```
-
 4. Set Jupyter Kernel in VS Code. Open VSCode and press `Cmd + Shft + P`, type `python` and choose `select python interpreter` you'll see the interface below. If you don't see it, be patient and press the refresh buttuon and wait. It'll finally appear.
 
 ![1739592348320](image/README/1739592348320.png)
@@ -71,6 +68,13 @@ python lstm_train.py /path/to/json/file --batch_size 32 --max_len 256 --n_epochs
 
 ```
 
+The training history of LSTM is as below 
+
+![1740086493372](image/README/1740086493372.png)
+
+
+
+
 
 To train/finetune BERT, use the following similar command
 
@@ -78,13 +82,18 @@ To train/finetune BERT, use the following similar command
 python bert_train.py /path/to/json/file --batch_size 32 --max_len 256 --n_epochs 8
 ```
 
+The training process is in below
+
+![1740086365288](image/README/1740086365288.png)
+
 #### Distilled BERT (Sunny)
 
+To be added.
 
 #### Long Transformers (Siqi)
 
+To be added. 
 
+### Howard and Yutong's Task
 
-### Howard and Yutong's Task 
-
-To be added 
+To be added
